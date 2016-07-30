@@ -32,8 +32,8 @@ def main():
 
   # Description found if help is in args
   parser = argparse.ArgumentParser(
-          description='Profiling a Reddit user\'s sailor mouth',
-          epilog="No one is perfect")
+          description='Profiling a Reddit user\'s word usage',
+          epilog="The data was there all along.")
   
   required = parser.add_argument_group('required arguments')
   # Target user argument
@@ -41,7 +41,7 @@ def main():
   # Number of comments to profile argument
   parser.add_argument('-l', '--limit', type=int, help="Number of comments to profile, defaults to 100 (upper limit of 999 imposed by Reddit)", default=100)
   # Target word definitions list
-  parser.add_argument('-d', '--dict', type = str, help="Path to target word definitions", default='bad_words.txt')
+  parser.add_argument('-d', '--dict', type = str, help="Path to target word definitions. Make sure file is in 'lists' directory and include .txt. Each word must be on separate line", default='bad_words.txt')
   # Sorting options for bar graph
   parser.add_argument('-s', '--sort', help = "Sort graph. Include 'inc' for increasing or 'dec' for decreasing", dest = 'sort')
   # Toggle to include what was said, where, and how much
@@ -68,7 +68,7 @@ def main():
   # Reddit object
   user = r.get_redditor(username)
   # Load list of targetted words
-  with open(dict_path) as f:
+  with open("lists/"+dict_path) as f:
     targetwords = f.read().splitlines()
 
   # Container for statistics on a particular subreddit
