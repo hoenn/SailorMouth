@@ -13,7 +13,8 @@ pip install ascii_graph
 
 ####Running the program
 This program is launched from the command line and outputs to the command line
-Using //link to itargparse// run the program with a series of commands
+
+Using argparse run the program with a series of commands
 ```
 python sailor_mouth.py --help
 usage: sailor_mouth.py [-h] -u USER [-l LIMIT] [-d DICT] [-s SORT] [-v] [-c]
