@@ -27,7 +27,7 @@ Optional arguments include
 
 ```-l, --limit``` Number of comments to profile. Default value of 100. Upper limit of 999 imposed by Reddit API
 
-```-d, --dict``` File path to target word definitions. Defaults to 'bad_words.txt'. Ensure that file is in 'lists' directory and include .txt in argument
+```-d, --dict``` File path to target word definitions. Defaults to 'bad_words.txt'. Ensure that file is in 'lists' directory and include '.txt' in argument
 
 ```-s, --sort``` Sort graph data. Include 'inc' or 'dec' as an argument
 
