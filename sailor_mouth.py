@@ -116,10 +116,10 @@ def main():
         else:
           data[sr_str] = SubredditData(sr_str)
           data[sr_str].add_word(word = t_word)
-      if found_in_comment:
-        # Reset flag
-        found_in_comment = False
-        comments_affected += 1
+    if found_in_comment:
+      # Reset flag
+      found_in_comment = False
+      comments_affected += 1
 
 
   if verbose_output:
