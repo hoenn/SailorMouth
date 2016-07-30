@@ -7,8 +7,8 @@ This project was created to analyze how toxic a given reddit user's comments cou
 
 Dependencies can easily be installed with pip by:
 ```
-pip install praw
-pip install ascii_graph
+$ pip install praw
+$ pip install ascii_graph
 ```
 
 ####Running the program
@@ -16,12 +16,12 @@ This program is launched from the command line and outputs to the command line
 
 Using argparse run the program with a series of commands
 ```
-python sailor_mouth.py --help
+$ python sailor_mouth.py --help
 usage: sailor_mouth.py [-h] -u USER [-l LIMIT] [-d DICT] [-s SORT] [-v] [-c]
 ```
 The only required argument is ```-u``` which must be immediately followed by a user
 
-Example: ```python sailor_mouth.py -u i_am_hoenn```
+Example: ```$ python sailor_mouth.py -u i_am_hoenn```
 
 Optional arguments include
 
@@ -38,7 +38,7 @@ Optional arguments include
 
 Running using all settings
 ```
-python sailor_mouth.py -u i_am_hoenn -l 1000 -d sat_300.txt -s dec -c -v
+$ python sailor_mouth.py -u i_am_hoenn -l 1000 -d sat_300.txt -s dec -c -v
 ```
 
 ####Windows Command Prompt color not working
