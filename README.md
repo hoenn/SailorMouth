@@ -1,6 +1,8 @@
 # SailorMouth
 Profiles a reddit user's word choice against a target word list. 
 
+![alt text](https://github.com/Hoenn/SailorMouth/blob/master/images/scrnshot.png "Anonymous user's results, not too good!")
+
 ##Dependencies
 [PRAW](https://github.com/praw-dev/praw), [ascii_graph](https://github.com/kakwa/py-ascii-graph)
 
