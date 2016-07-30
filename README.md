@@ -46,7 +46,7 @@ ANSI Escape codes may not be supported in your version of windows.
 See [ansicon](https://github.com/adoxa/ansicon) to work around the issue
 
 ###License
-[GPLv3](
+[MIT](https://github.com/Hoenn/SailorMouth/blob/master/LICENSE)
 
 ####Note
 Due to artificial limitations imposed by the Reddit API, the runtime of the program is slowed
