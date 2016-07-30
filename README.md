@@ -1,8 +1,7 @@
 # SailorMouth
-###Profiles a reddit user's word usage
-This project was created to analyze how toxic a given reddit user's comments could be. However, depending on the word list used the results can be interpreted completely differently. For example, running the program with a list of SAT words returns much more positive results.
+Profiles a reddit user's word choice against a target word list.
 
-####Dependencies
+###Dependencies
 [PRAW](https://github.com/praw-dev/praw), [ascii_graph](https://github.com/kakwa/py-ascii-graph)
 
 Dependencies can easily be installed with pip by:
@@ -11,7 +10,7 @@ $ pip install praw
 $ pip install ascii_graph
 ```
 
-####Running the program
+###Running the program
 This program is launched from the command line and outputs to the command line
 
 Using argparse run the program with a series of commands
@@ -41,10 +40,13 @@ Running using all settings
 $ python sailor_mouth.py -u i_am_hoenn -l 1000 -d sat_300.txt -s dec -c -v
 ```
 
-####Windows Command Prompt color not working
+###Windows Command Prompt color not working
 ANSI Escape codes may not be supported in your version of windows. 
 
 See [ansicon](https://github.com/adoxa/ansicon) to work around the issue
+
+###License
+[GPLv3](
 
 ####Note
 Due to artificial limitations imposed by the Reddit API, the runtime of the program is slowed
