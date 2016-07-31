@@ -1,4 +1,3 @@
 bad_words.txt -> http://fffff.at/googles-official-list-of-bad-words/
-LDNOOBW.txt   -> https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words
 british_slang.txt ->(modified) http://www.anglotopia.net/british-identity/humor/top-100-most-beautiful-british-slang-words-and-phrases/
 sat_300.txt, vocab_top1000.txt -> https://www.vocabulary.com

@@ -32,7 +32,7 @@ Optional arguments include
 
 ```-s, --sort``` Sort graph data. Include 'inc' or 'dec' as an argument
 
-```-v, --verbose``` Includes extra information: what words occured in what subreddits and how many times they occured
+```-v, --verbose``` Includes extra information: what words occured in what subreddits and how many times they occured. Potentially NSFW if using a target word list that is NSFW
 
 ```-c, --color``` Enables a colored graph based, must have ANSI color enabled
 
