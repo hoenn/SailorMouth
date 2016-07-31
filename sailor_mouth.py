@@ -132,8 +132,9 @@ def main():
  
   print("\nTotal comments analyzed: "+ str(num_comments))
   print("Number of comments containing target words: " + str(comments_affected))
-  ratio = round((comments_affected/num_comments) * 100, 3)
-  print("Percentage of comments containing target words: "+str(ratio) +"%")   
+  if num_comments > 0:
+    ratio = round((comments_affected/num_comments) * 100, 3)
+    print("Percentage of comments containing target words: "+str(ratio) +"%")   
 
   # Graphing imports
   from ascii_graph import Pyasciigraph
