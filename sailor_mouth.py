@@ -1,7 +1,9 @@
 #! python3
-# Scrapes a reddit users comment history to collect
-# statistics about certain words they've used
-# Author: github.com/Hoenn
+"""
+Scrapes a reddit users comment history to collect
+statistics about certain words they've used
+Author: github.com/Hoenn
+"""
 
 # Creates list of colors for each row of graph
 def create_color_pattern(data):
@@ -36,18 +38,12 @@ def main():
           epilog="The data was there all along.")
   
   required = parser.add_argument_group('required arguments')
-  # Target user argument
   required.add_argument('-u', '--user', type=str, help="Reddit username to analyze", required=True)
-  # Number of comments to profile argument
   parser.add_argument('-l', '--limit', type=int, help="Number of comments to profile, defaults to 100 (upper limit of 999 imposed by Reddit)", default=100)
-  # Target word definitions list
   parser.add_argument('-d', '--dict', type = str, help="Path to target word definitions. Make sure file is in 'lists' directory and include .txt. Each word must be on separate line", default='bad_words.txt')
-  # Sorting options for bar graph
   parser.add_argument('-s', '--sort', help = "Sort graph. Include 'inc' for increasing or 'dec' for decreasing", dest = 'sort')
-  # Toggle to include what was said, where, and how much
   parser.add_argument('-v', '--verbose', help="Include verbose breakdown for each Subreddit", dest = 'verbose', action = 'store_true')
   parser.set_defaults(verbose = False)
-  # Toggle for colored graph, not default supported in Windows cmd
   parser.add_argument('-c', '--color', help="Included intensity colored graph, must have ANSI color enabled", dest ='color', action = 'store_true')
   parser.set_defaults(color = False)
 
