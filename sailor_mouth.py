@@ -124,13 +124,23 @@ def main():
 
   # Sort verbose output if desired
   if sort != None:
+    #Sort subreddits by total count, then sort each word list by num occurances
     sort = sort.lower()
     if sort == 'inc':
       data = OrderedDict(sorted(data.items(), key=lambda x: x[1].total_count, reverse=False))
+      for k, v in data.items():
+        v.word_dict = OrderedDict(sorted(v.word_dict.items(), key= operator.itemgetter(1), reverse=False))
     elif sort == 'dec':
       data = OrderedDict(sorted(data.items(), key=lambda x: x[1].total_count, reverse=True))
+      for k, v in data.items():
+        v.word_dict = OrderedDict(sorted(v.word_dict.items(), key= operator.itemgetter(1), reverse=True))
   else:
+      #Sort subreddits and word lists alphabetically
       data = OrderedDict(sorted(data.items(), key=lambda x: x[1].name.lower(), reverse=False))
+      for k, v in data.items():
+        v.word_dict = OrderedDict(sorted(v.word_dict.items(), key= operator.itemgetter(0), reverse=False))
+
+
 
   
   if verbose_output:
