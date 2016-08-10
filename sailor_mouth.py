@@ -6,6 +6,8 @@ Author: github.com/Hoenn
 """
 
 import sys, praw, argparse, re
+import operator
+from collections import OrderedDict
 # Graphing imports
 import ascii_graph.colors
 from ascii_graph import Pyasciigraph
@@ -120,7 +122,16 @@ def main():
       found_in_comment = False
       comments_affected += 1
 
+  # Sort verbose output if desired
+  if sort != None:
+    sort = sort.lower()
+    if sort == 'inc':
+      data = OrderedDict(sorted(data.items(), key=lambda x: x[1].total_count, reverse=False))
+    elif sort == 'dec':
+      data = OrderedDict(sorted(data.items(), key=lambda x: x[1].total_count, reverse=True))
 
+
+  
   if verbose_output:
     print("\nBreakdown by individual subreddit\n")
     # Iterate through key, value pairs for results
