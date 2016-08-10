@@ -129,7 +129,8 @@ def main():
       data = OrderedDict(sorted(data.items(), key=lambda x: x[1].total_count, reverse=False))
     elif sort == 'dec':
       data = OrderedDict(sorted(data.items(), key=lambda x: x[1].total_count, reverse=True))
-
+  else:
+      data = OrderedDict(sorted(data.items(), key=lambda x: x[1].name, reverse=False))
 
   
   if verbose_output:
