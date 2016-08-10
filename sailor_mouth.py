@@ -5,9 +5,30 @@ statistics about certain words they've used
 Author: github.com/Hoenn
 """
 
+import sys, praw, argparse, re
+# Graphing imports
+import ascii_graph.colors
+from ascii_graph import Pyasciigraph
+from ascii_graph.colordata import vcolor
+
+# Container for statistics on a particular subreddit
+class SubredditData:
+  def __init__(self, name):
+    self.name = name
+    self.word_dict = {}
+    self.total_count = 0
+  def add_word(self, word):
+    # If word exists, increment value
+    if word in self.word_dict:
+      self.word_dict[word] += 1
+    # Otherwise set the value and type
+    else: 
+      self.word_dict[word] = 1
+
+    self.total_count +=1
+
 # Creates list of colors for each row of graph
 def create_color_pattern(data):
-  import ascii_graph.colors
 
   # Initialize list of colors
   pattern=[]
@@ -30,9 +51,6 @@ def create_color_pattern(data):
   return pattern
 
 def main():
-  import sys, praw, argparse, re
-
-  # Description found if help is in args
   parser = argparse.ArgumentParser(
           description='Profiling a Reddit user\'s word usage',
           epilog="The data was there all along.")
@@ -67,21 +85,6 @@ def main():
   with open("lists/"+dict_path) as f:
     targetwords = f.read().splitlines()
 
-  # Container for statistics on a particular subreddit
-  class SubredditData:
-    def __init__(self, name):
-      self.name = name
-      self.word_dict = {}
-      self.total_count = 0
-    def add_word(self, word):
-      # If word exists, increment value
-      if word in self.word_dict:
-        self.word_dict[word] += 1
-      # Otherwise set the value and type
-      else: 
-        self.word_dict[word] = 1
-      # Increment total words in subreddit
-      self.total_count +=1
 
   # Dictionary of data objects
   data = {}
@@ -132,9 +135,7 @@ def main():
     ratio = round((comments_affected/num_comments) * 100, 3)
     print("Percentage of comments containing target words: "+str(ratio) +"%")   
 
-  # Graphing imports
-  from ascii_graph import Pyasciigraph
-  from ascii_graph.colordata import vcolor
+
 
   # Initialize graph
   bar_graph= []
