@@ -3,7 +3,7 @@ Profiles a reddit user's word choice against a target word list.
 
 ![alt text](https://github.com/Hoenn/SailorMouth/blob/master/images/scrnshot.png "Anonymous user's results, not too good!")
 
-##Dependencies
+## Dependencies
 [PRAW](https://github.com/praw-dev/praw), [ascii_graph](https://github.com/kakwa/py-ascii-graph)
 
 Dependencies can easily be installed with pip by:
@@ -12,7 +12,7 @@ $ pip install praw
 $ pip install ascii_graph
 ```
 
-##Running the program
+## Running the program
 This program is launched from the command line and outputs to the command line
 
 Using argparse run the program with a series of commands
@@ -42,13 +42,13 @@ Running using all settings
 $ python sailor_mouth.py -u i_am_hoenn -l 1000 -d sat_300.txt -s dec -c -v
 ```
 
-##Windows Command Prompt color not working
+## Windows Command Prompt color not working
 ANSI Escape codes may not be supported in your version of windows. 
 
 See [ansicon](https://github.com/adoxa/ansicon) to work around the issue
 
-##License
+## License
 [MIT](https://github.com/Hoenn/SailorMouth/blob/master/LICENSE)
 
-####Note
+#### Note
 Due to artificial limitations imposed by the Reddit API, the runtime of the program is slowed
