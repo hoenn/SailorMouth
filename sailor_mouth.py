@@ -165,7 +165,7 @@ def main():
   print("\nTotal comments analyzed: "+ str(num_comments))
   print("Number of comments containing target words: " + str(comments_affected))
   if num_comments > 0:
-    ratio = round((comments_affected/num_comments) * 100, 3)
+    ratio = round((comments_affected/floats(num_comments)) * 100, 3)
     print("Percentage of comments containing target words: "+str(ratio) +"%")   
 
 
