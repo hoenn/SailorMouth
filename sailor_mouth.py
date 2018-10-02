@@ -5,6 +5,7 @@ statistics about certain words they've used
 Author: github.com/Hoenn
 """
 
+import json
 import sys, praw, argparse, re
 import operator
 from collections import OrderedDict
@@ -77,12 +78,22 @@ def main():
   color_output = args.color
   sort = args.sort
 
-  # Identifies our script and allows more requests
-  user_agent = "Word Profiler v0.2 by i_am_hoenn"
-  r = praw.Reddit(user_agent = user_agent)
+  #Create praw.Reddit Object
+  with open("config.json", "r") as file:
+    config = json.load(file)
 
-  # Reddit object
-  user = r.get_redditor(username)
+  client_id = config["client_id"]
+  client_secret = config["client_secret"]
+  user_agent = config["user_agent"]
+
+  r = praw.Reddit(client_id = client_id,
+                  client_secret = client_secret,
+                  user_agent = user_agent)
+
+  
+
+  # Redditor object
+  user = r.redditor(username)
   # Load list of targetted words
   with open("lists/"+dict_path) as f:
     targetwords = f.read().splitlines()
@@ -95,7 +106,7 @@ def main():
   comments_affected = 0
   found_in_comment= False
   num_comments = 0
-  for comment in user.get_comments(limit = limit):
+  for comment in user.comments.new(limit = limit):
     # Keep track of actual number of comments
     num_comments += 1
     # Convert to lower case to mitigate case sensitivity
